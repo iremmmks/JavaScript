@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      var zaman=new Date();
+      document.write(zaman+"<br/>");
+  
+      /*zamanı ve tarihi biz değiştirmek istersek*/
+      var zaman1=new Date(2001,10,28,18,30,17);
+      document.write(zaman1+"<br/>");
+      /*getFullYear(),getMonth(),getDate(),getDay(),getHours(),getMinutes(),getSeconds(),getMilliseconds(),getUTCFullYear(),getUTCMonth()
+      getUTCDate(), getUTCDay(), getUTCHours(), getUTCMinutes(), getUTCSeconds(),getUTCMilliseconds(),getTime()=now()*/
+       /*setFullYear(),setMonth(),setDate(),setHours(),setMinutes(),setSeconds(),setMilliSeconds(),setUTCFullYear(),setUTCMonth()
+      setUTCDate(), setUTCDay(), setUTCHours(), setUTCMinutes(), setUTCSeconds(),setUTCMilliseconds(),setTime(),*/
+      var yeni=zaman.getTime();
+      document.write(yeni+"<br/>");
+      zaman.setTime(1678361624959);
+      document.write(zaman+"<br/>");
+      /*parse()=zaman tarihinin başlangıç değeri(1 Ocak 1970) ile günümüz arasındaki fark */
+       var fark= Date.parse("October 28,1970");
+       document.write(fark+"<br/>");
+       /*toLocalString()*/
+       var yeni1=zaman.toLocaleString(); 
+       document.write(yeni1+"<br/>");
+       /*toUTCString()=evrensel zaman diliminde string veri türüne çenirir*/
+       var yeni2=zaman.toUTCString();
+       document.write(yeni2+"<br/>");
+       /*toISOString()=evrensel zaman diliminde tarih ve zaman bilgilerini ISO standartlarında string veri türüne çenirir*/
+       var yeni3=zaman.toISOString();
+       document.write(yeni3+"<br/>");
+       /*toJSON()=evrensel zaman diliminde tarih ve zaman bilgilerini json standartlarında string veri türüne çenirir*/
+       var yeni4=zaman.toJSON();
+       document.write(yeni4+"<br/>");
+       
+       /*toDateString()=evrensel zaman diliminde sadece tarih bilgilerini  string veri türüne çenirir*/
+       var yeni5=zaman.toDateString();
+       document.write(yeni5+"<br/>");
+       /*toLocalDateString()=evrensel zaman diliminde sadece tarih bilgilerini  string veri türüne çenirir*/
+       var yeni6=zaman.toLocaleDateString();
+       document.write(yeni6+"<br/>");
+       /*toTimeString()=evrensel zaman diliminde sadece saat bilgilerini  string veri türüne çenirir*/
+       var yeni7=zaman.toTimeString()
+       document.write(yeni7+"<br/>");
+       /*toLocalTimeString()=evrensel zaman diliminde sadece saat bilgilerini  string veri türüne çenirir*/
+       var yeni8=zaman.toLocaleTimeString();
+       document.write(yeni8+"<br/>");
+       /*valueOf=Tam anlamıyla aktarım sağlar*/
+
+       
+
+    </script>
+</body>
+</html>

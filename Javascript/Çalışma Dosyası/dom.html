@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head id="irem">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body onclick="activeElemaniBul()">
+     İlgi Alanlarınız:<br><br/>
+     Eğlence:<input name="ilgiAlani" type="checkbox" value="Eğlence"/>
+     Tiyatro:<input name="ilgiAlani" type="checkbox" value="Tiyatro"/>
+     Sinema:<input name="ilgiAlani" type="checkbox" value="Sinema"/>
+     Kitap:<input name="ilgiAlani" type="checkbox" value="Kitap"/>
+     Eğitim:<input name="ilgiAlani" type="checkbox" value="Eğitim"/>
+     <button onclick="islem()">Hepsini seç</button>
+     <button onclick="kaldir()">Hepsini kaldır</button>
+     <br><br/>
+     <div class="bicimlendir"> İrem1728</div>
+
+     <div class="bicimlendir2"> İrem1728</div>
+     <div class="bicimlendir2"> İrem1728</div>
+     <div class="bicimlendir2"> İrem1728</div>
+     <div class="bicimlendir"> İrem1728</div>
+     <div class="bicimlendir"> İrem1728</div>
+     <div class="bicimlendir"> İrem1728</div>
+  
+     <br><br/>
+     <div> İrem1728</div>
+     <ul>
+        <li>İrem</li>
+        <li>Yasin</li>
+        <li>Ebrar</li>
+     </ul>
+     <div id="sonuc"></div>
+
+     <br><br/>
+
+    Volkanın en sevdiği hayvan <span name="hayvanadi">sibirya kurdu</span>Onurun ensevdiği <span name="hayvanadi">kedi</span> Aslının ise<span name="hayvanadi">Köpek</span>
+    <br><br/>
+    Hayvanlar:<span id="hayvanalani"></span>
+    <button onclick="islem2()">Çalıştır</button>
+    <button onclick="islem3()">başa dön</button>
+
+    <script>
+     
+     function islem()
+     {
+        var deger=document.getElementsByName("ilgiAlani");
+        for(var basla=0;basla<deger.length;basla++)
+     {
+            deger[basla].checked=true;
+     }
+
+     }
+     function kaldir()
+     {
+        var deger=document.getElementsByName("ilgiAlani");
+        for(var basla=0;basla<deger.length;basla++)
+     {
+            deger[basla].checked=false;
+     }
+
+     }
+   
+
+
+      var bilgi=document.getElementsByName("hayvanadi");
+      var hayvanlar=[];
+      for(var baslangic=0;baslangic<bilgi.length;baslangic++)
+      {
+        var sonuc=bilgi[baslangic].innerHTML;
+        hayvanlar[baslangic]=sonuc;
+      }
+      document.getElementById("hayvanalani").innerHTML=hayvanlar;
+     
+      /*getElementByTagName*/
+    var islem1= document.getElementsByTagName("DIV")[0].innerHTML;
+     document.getElementById("sonuc").innerHTML=islem1;
+     /*getElementByClassName*/
+
+      var bicim=document.getElementsByClassName("bicimlendir2");
+      for(var bas=0;bas<bicim.length;bas++)
+      {
+        bicim[bas].style.backgroundColor="#F1F1F1";
+      }
+      /*body=body tagının referansını elde etmek için kullanılır.*/
+      function islem2()
+      {
+        var deg=document.body.innerHTML;
+        document.getElementById("sonuc").innerHTML=deg;
+      }
+      /*head=head tagının referansını elde etmek için kullanılır.*/
+       var bil=document.head.id;
+       document.write(bil);
+       /*compatMode=doğru çalışıp çalışmadığını gösterir*/
+       var bil1=document.compatMode;
+       document.write(bil1);
+      /*documentURI=belge sayfasının kaynak kodu adres referansını elde etmek için kullanılır.*/
+      var bil3=document.documentURI;
+      document.write(bil3);
+      /*location=belge sayfasının URI adres referansını elde etmek için kullanılır.*/
+      var bil4=document.location;
+      document.write(bil4);
+      //var bil5=document.location.href="http://www.google.com.tr";
+      //document.write(bil5);
+      function islem3()
+      {
+        document.location.href="#top";
+      }
+      /*domain=belgenin domain referansını elde etmek için kullanılır.*/
+      
+      /*lastModified=belgenin en son ne zaman güncellendiğini gösterir.*/
+      var gun=document.lastModified;
+      document.write(gun);      
+      /*readyState=belge içeriğinin tarayıcıya yüklenme durumu değeri referansını elde etmek için kullanlır*/
+      var gun1=document.readyState;
+      document.write(gun1);
+      /*designMode=belge sayfasının çalışma anında düzenlenebilir olup olmadığının referansını elde etmek için kullanılır.*/
+      var gun2=document.designMode;
+      document.write(gun2+" ");
+      
+      /*hasFocus()=belge odağının olup olmadığı referansları boolen veri türünde elde etmek için kullanılır*/
+      var focuss=document.hasFocus();
+      document.write(focuss)
+      
+      /*setInterval("ornekk()",1000)
+      function ornekk(){
+        if (document.hasFocus())
+        {
+            document.write("Sayfa odaklanıldı"+" ");
+        }
+        else
+        {
+          document.write("Sayfa odaklanmadı"+" ");
+        }
+      }
+      */
+      /*activeElment=belge içinde seçili ve ya odaklanılmış elementin referansını elde etmek için kullanılır.*/
+      
+
+      function activeElemaniBul() {
+        var deger1=document.activeElement.tagName;
+        alert(deger1);
+      }
+      
+
+
+
+    </script>
+    
+</body>
+</html>

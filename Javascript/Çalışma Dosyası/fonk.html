@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*length=fonksiyonun parametre sayısını verir.*/
+       function deneme(isim,şehir,yas)
+       {
+        var deger=deneme.length;
+        document.write(deger);
+       }
+       deneme();
+       
+       /*recursive fonk*/
+       function demo(sayi)
+       {
+          if(sayi>0 && sayi<10)
+          {
+            document.write("İrem Kartal"+"<br/>");
+            sayi++;
+            demo(sayi);
+          }
+          else
+          {
+            return;
+          } 
+       }
+       demo(1);
+       /*İç içe fonk*/
+       function demo2()
+       {
+        function deneme2(sayi)
+          {
+            document.write(sayi+"<br/>");
+          }
+        return deneme2;
+       }
+    demo2()(5);
+
+    /*argumnet=fonksiyona herhangi parametre tanımlamadan bile gelebilecek tüm parametre değerlerinin almasını sağlar */
+        function demo3()
+        {
+            for(var baslangic=0;baslangic<arguments.length;baslangic++)
+            {
+                document.write(arguments[baslangic]+"<br/>")
+            }
+        }
+         demo3("İrem","Kartal")
+
+       /*caller=fonk çağıran diğer bir fonksiyon referans olarak tüm bilgilerin içermesine yarar.*/
+       function esas()
+       {
+        for(var baslangic=0;baslangic<esas.caller.arguments.length;baslangic++)
+        {
+            document.write(diger.arguments[baslangic]+"<br/>");
+        }
+
+       }
+       function diger(isim,soyIsim)
+       {
+        esas();
+       }
+    diger("Sebahat","Kartal");
+     /*fonksiyonlarda return ifadesi içerisinde fonk tanımlama ve çağırma*/
+     var kisi = function()
+     {
+      var isim="İrem Kartal";
+      return{
+        isimGetir:function()
+        {
+          return isim;
+        },
+        isimdegistir:function(yenisim)
+        {
+          isim=yenisim;
+        }
+      }
+     } ();
+     kisi.isimdegistir("Yasin Dırmıkcı");
+     document.write(kisi.isimGetir());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      /* iç içe geçmiş diziler,isArray methodu array olup olmadığını kontrol eder*/
+      var dizi=["İrem","Bora","Yasin","Rabia",["Ali","Ayşe","Fatma",["Buse","verda","Elif"],"Merve","Ebrar"],"Emir","Çağrı"];
+      var sonuc;
+      for(sonuc in dizi)
+             {
+                if(Array.isArray(dizi[sonuc]))
+                {
+                    var iskontrol;
+                    for(iskontrol in dizi[sonuc])
+                    {
+                        if(Array.isArray(dizi[sonuc][iskontrol]))
+                        {
+                            var ilk;
+                            for(ilk in dizi[sonuc][iskontrol])
+                            {
+                                document.write(dizi[sonuc][iskontrol][ilk]+"<br/>");
+                            }
+                        }
+                        else{
+                            document.write(dizi[sonuc][iskontrol]+"<br/>");
+                        }
+                    }
+                }
+                else{
+                    document.write(dizi[sonuc]+"<br/>");
+                }
+             }
+             /*length dizinin ilgili indisinin uzunluğunu verir,delete ise dizinin ilgili indisinin silinmesini sağlar.*/
+             delete dizi[2];
+             document.write(dizi+"<br/>");
+             var islem=dizi.length;
+             document.write(islem);
+             /*pop()=dizinin son elemanını siler ve sildiği elemanı döndürür.*/
+             /*shift()=dizinin ilk elemanını siler ve sildiği elemanı döndürür.*/
+             /*push()=dizinin sonuna elemanlar eklemeye yarar .*/
+             /*unshift()=dizinin başına elemanlar eklemeye yarar .*/
+             /*splice()=diziden eleman veya elemanlar siler ve sildiği elemanı döndürür ayrıca diziye eleman eklenmesini de sağlar.*/
+             /*slice()=Kendisine verilecek olan parametreler ile tanımlanmış dizi aralığında bulunan değerleri kopyalayarak yeni bir dizi oluşturur ve oluşturduğu dizinin değerini geri döndürür.*/
+             /*copyWithin()=Kendisine verilecek olan parametreler ile tanımlanmış dizi aralığında bulunan değerleri kopyalayarak ,parametreler doğrultusunda dizinin elemanlarını değiştirir ve dizizinin değerini geri döndürür.*/
+             /*fill()=Kendisine verilecek olan parametreler ile tanımlanmış dizi aralığında bulunan değerleri belirtilmiş olan değer ile değiştirir ve oluşturduğu dizinin değerini geri döndürür.*/
+             /*concat()=Dizi veya dizileri birbirine ekler birleştirir ve değeri geri döndürür.*/
+             /*join()=dizi veri türünden string veri türüne döndürür.Ayraçlar kullanarak düz bir metin oluşturur*/
+             /*toString()=Dizideki tüm elemanları string veri türüne çevirir ve metin olarak geriye döndürür*/
+             /*valueOf()=Tam aktarım sağlar*/
+             /*indexOf()= Dizideki aranan elemanın indexini verir*/
+             /*lastIndexOf()= Dizideki aranan elemanın son indexini verir*/
+             /*find()=kendisine parametre olarak verilen fonksiyonu dizideki elemanları arar ve bulduğu değeri geriye döndürür.*/
+             /*findIndex()=kendisine parametre olarak verilen fonksiyonu dizideki elemanları arar ve bulduğu indexi geriye döndürür.*/
+             /*reduce()=kendisine parametre olarak verilen fonksiyonu dizideki her elemanın üstünde soldan sağa tek tek gezer ve tek bir değer oluşturur.*/
+             /*reduceRight()=kendisine parametre olarak verilen fonksiyonu dizideki her elemanın üstünde sağdan sola tek tek gezer ve tek bir değer oluşturur.*/
+             /*reverse()= Dizideki elemanları ters çevirir*/
+             /*sort()= Dizideki elemanları sıralar ama bunu unicode olarak çalıştırır*/
+             /*forEach()=kendisine parametre olarak verilen fonksiyonu dizideki her elemanın üstünde tek tek çalışır.*/
+             /*some()=kendisine parametre olarak verilen fonksiyonu true dönene kadardizi elemanları üzerinde gezer.*/
+             /*every()=kendisine parametre olarak verilen fonksiyonu false dönene kadardizi elemanları üzerinde gezer.*/
+             /*filter()=kendisine parametre olarak verilen fonksiyonu true dönen elemanları kopyalayarak yeni bir dizi oluşturur.*/
+             /*map()=kendisine parametre olarak verilen fonksiyonu dizideki her elemanın üstünde tek tek çalışır.Her geri döndürdüğü değerlerden dizi oluşturur.*/
+             /*avarage()=Number (sayı)veri türü için  dizideki her elemanın üstünde tek tek çalışır ve tüm değerlerin ortalamasını bulur.*/
+             
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

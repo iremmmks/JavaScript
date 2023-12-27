@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     /*match()=Değişken içeriğini kontrol eder ve aranan değerin eşleşmesi sonucunda içeriği yeni bir dizi oluşturarak geriye döndürür*/
+     var metin="İrem Kartal İrem";
+     var deger=RegExp("irem","i");
+     var sonuc=metin.match(deger);
+     document.write(sonuc);
+     /*m,i,g kullanımı i büyük harf küçük harf duyarsız,g tüm satır,m birden fazla satır varsa kullanmaya yarar*/
+    var metin1="\nİrem Kartal\nYusuf Kartal\nYasin";
+    var ifade=RegExp("yasin","mig");
+    var sonuc1=metin1.match(ifade);
+    document.write(sonuc1+"<br/>");
+    /*test()=Değişken içeriğini kontrol eder ve aranan değerin eşleşmesi sonucunda boolen bir ifade döndürür.*/
+     var metin2="İrem Kartal İrem";
+     var deger1=RegExp("İrem");
+     var sonuc2=deger1.test(metin2);
+     document.write(sonuc2);
+    /*input=Değişken içeriğini kontrol eder ve aranan değerin eşleşmesi sonucunda tüm ifadeyi geri döndürür.*/
+     var metin3="İrem Kartal İrem";
+     var deger2=RegExp("İrem");
+     var sonuc3=RegExp.input;
+     document.write(sonuc3+"<br/>");
+    /*search()=Değişken içeriğini kontrol eder ve aranan değerin ilk eşleşmeyi sağlayan  indisini geri döndürür.*/
+    /*lastIndex()=Değişken içeriğini kontrol eder ve aranan değerin son eşleşmeyi sağlayan indisini geri döndürür.*/
+    /*lastMatch=Değişken içeriğini kontrol eder ve aranan değerin son eşleşmeyi sağlayan değeri geri döndürür.*/
+    var isim="İrem Kartal bilgisayar mühendisliği öğrencisidir.";
+    var demo=RegExp("öğrencisidir","g");
+    demo.test(isim);
+    var son=RegExp.lastMatch;
+    document.write(son+"<br/>");
+    /*leftContext=Değişken içeriğini kontrol eder ve aranan değerin  eşleşmeyi sağlayan değerinin solunda kalan kısım geri döndürür.*/
+    /*rightContext=Değişken içeriğini kontrol eder ve aranan değerin  eşleşmeyi sağlayan değerinin sağında kalan kısım geri döndürür.*/
+    /*replace()=Değişken içeriğini kontrol eder ve aranan değerin  eşleşmeyi sağlayan değerinin değişimini sağlayarak yeni bir içerik oluşşturarak geri döndürür.*/
+    var isim1="İrem Kartal bilgisayar mühendisliği öğrencisidir.";
+    var demo1=RegExp("öğrencisidir","g");
+    var son1=isim1.replace(demo1,"hocasıdır.")
+    document.write(son1+"<br/>");
+    /*split=Değişken içeriğini kontrol eder ve aranan değerin  eşleşmeyi sağlayan değerini bölümleyerek yeni bir dizi oluşturur ve geri döndürür.*/
+    var isim2="İrem Kartal bilgisayar mühendisliği öğrencisidir.";
+    var demo2=RegExp(" ","g");
+    var son2=isim2.split(demo2)
+    document.write(son2[0]+"<br/>");
+    /*compile()=Değişken içeriğini kontrol eder ve aranan değerin  eşleşmeyi sağlayan değerinin değişmesini sağlayarak geri döndürür.*/
+
+    
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

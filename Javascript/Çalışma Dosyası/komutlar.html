@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript" language="javascript">
+        /*DEĞİŞKEN KOMUTLARI*/
+        /*length method=bir string değerin uzunluğunu bulur.*/
+        /*eval method=bir komutu javascript komutunu çevirir*/
+        /*trim method= değişken içeriğinin başındaki ve sonundaki boşlukları siler*/
+        /*slice ve substring method=belli bir aralığı kopyalayabilir.*/
+        /*concat methodu=birden fazla değişkeni birleştirebilir.*/
+        /*repeat methodu=değişkeni tekrar etmeye yarar*/
+        /*toString methodu=değişken türünü stringe çeviri.*/
+        /* number methodu=değişken türünü sayı veri türüne çeviri*/
+        /* valueOf methodu=değişken türünü ve değerini tam anlamıyla aktarır.*/
+        /*search/indexOf methodu=değişkenin içinde aranan değerin indexini bulur*/
+        /*lastIndexOf methode=değişkenin içinde arar ve son eşleşeni bulur.*/
+        /* include method=Değişkenin içerip içermediğini bulur booolendir*/
+        /*startsWith methd=Değişkenin verilen değerle başyalıp başlamdığını bulur booolendir.*/
+        /*endsWith methd=Değişkenin verilen değerle sonlanıp sonlanmadığını bulur booolendir.*/
+        /*match methode=değişkenin içinde arar eşleşeni bulur.*/
+        /*replace method=değişkeni değiştirip 2.paremetrenin değeri yapar*/
+        /* g ve i methortaların içindeki parametrelerle kullanılır.g tamamını seçmeye,i ise büyük küçük harf duyarlılığına bakmaz*/
+        /*split method=değişkeni bölümleyerek dizi oluşturmaya sağlar.*/
+        /*localCompare method=değişkenleri karşılaştırıp tarayıcı diline göre çevirir.-1 ilk içerik ikinciden önce ise,0 eşit ise,1 ikinci öne is */
+        /*charAt method=içeriğin indeksine karşılık gelen karakteri yazdırır.*/
+        /*charCodeAt method=içeriğin indeksine karşılık gelen unicode değerini yazdırır.*/
+        /*fromCharCode method=içeriğin unicode değerine karşılık gelen değeri  yazdırır.*/
+        /*encodeURL method=değişken içerisindeki özel karakterlerini UTF-8 kodlamasına dönüştürür decode ise çözerek geriye döndürür*/
+        /*encodeURIComponnet methodu =değişken içerisindeki özel karakterlerini UTF-8 kodlamasına dönüştürür*/
+        /*decodeURIComponnet methodu=değişken içerisindeki özel karakterlerini UTF-8 kodlamasına dönüştürülmüş karakterleri çözerek geriye döndürür.*/
+        /*escape methodu= değişken içerisindeki özel karakterleri unicode kodlamasına dönüstürerek geriye döndürür unescape ise tam tersi*/
+        /*toUpperCase methode=tüm harfleri büyük yapar ve geriye döndürür.*/
+        /*toLowerCase methode=tüm harfleri küçük yapar ve geriye döndürür*/
+        /*toLocalUpperCase method=metnin tümünü tarayıcı lokasyonuna göre büyük harfe dönüştürerek geriye döndürür*/
+        /*toLocalLowerCase method=metnin tümünü tarayıcı lokasyonuna göre küçük harfe dönüştürerek geriye döndürür*/
+        /*sub methodu=Alt simge yapar*/
+        /*sup methodu=üst simge yapar*/
+        /*big methodu=büyük font,small methodu=küçük font,bold=kalın font,italics=italik yazı,strike=metni düz çigi ile çizer,fixed=daktilo metni ile yazar*/
+        /*fontcolor methodu=font rengini değiştiri.*/
+        /*fontsize methodu=fontunu değiştirir.*/ 
+        /*anchor method=çapa tagı*/
+        /*link method=çapa değeri atar*/
+
+
+
+
+
+        var isim3="İrem Kartal Bilgisayar Mühendisliği Okuyor.";
+        var isim="İrem Kartal ";
+        var islem="5 + 8";
+        var isim1="  irem   "
+        var baglanti="https://www.btkakademı.gov.tr/portal/course/player/deliver/javascript-8099";
+        var deger="H";
+        var deger3="O";
+        var deger1="2";
+        document.write(isim.length+"<br/>" );
+        document.write(eval(islem) +"<br/>" );
+        document.write(isim1.trim()+isim +"<br/>");
+        document.write(isim3.slice(12,22) +"<br/>");
+        document.write( isim.concat(isim3,islem,isim1)+"<br/>");
+        document.write(isim.repeat(4)+"<br/>");
+        document.write(isim.indexOf("e")+"<br/>");
+        document.write(isim.includes("İrem")+"<br/>");
+        document.write(isim.replace("İrem","Kartal"+"<br/>"));
+        document.write(isim.split("a",2)+"<br/>");
+        document.write(isim.localeCompare(isim3)+"<br/>");
+        document.write(isim.charAt(0)+"<br/>");
+        document.write(encodeURI(baglanti)+"<br/>");
+        document.write(decodeURI(baglanti)+"<br/>");
+        document.write(escape(isim)+"<br/>");
+        document.write(deger+deger1.sub()+deger3);
+        document.write(isim.fontcolor("red"));
+        document.write(isim.fontsize(10));
+        alert(isim.anchor());
+        document.write(isim.link("http://www.google.com"));
+
+
+
+    </script>
+    
+</body>
+</html>

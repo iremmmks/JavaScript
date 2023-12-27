@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var bilgiler={isim:"İrem",soyisim:"Kartal",dogumTarihi:"28 Ocak"};
+        var kisiIsim=bilgiler.isim;
+        var kisisoyisim=bilgiler.soyisim;
+        var kisidoğumTarihi=bilgiler.dogumTarihi;
+        document.write("Bilgilerim:"+kisiIsim+" "+kisisoyisim+" "+kisidoğumTarihi+"<br/>");
+
+
+
+
+        var bilgiler1= new Object();
+        bilgiler1.isim1="İrem";
+        bilgiler1.soyisim1="Kartal";
+        bilgiler1.dgünü="28 Ekim";
+        document.write("Bilgilerim:"+bilgiler1.isim1+" "+bilgiler1.soyisim1+" "+bilgiler1.dgünü+"<br/>");
+
+
+
+        /*foksiyonda nesne oluşturma*/
+        function ornek()
+        {
+           this.isim1="İrem";
+           this.soyisim1="Kartal";
+           this.dgünü="28 Ekim";
+            
+        }
+        var bilgiler1=new ornek();
+        document.write("Bilgilerim:"+bilgiler1.isim1+" "+bilgiler1.soyisim1+" "+bilgiler1.dgünü+"<br/>");
+
+
+
+
+
+        var bilgiler={};
+        bilgiler.isim="Yasin";
+        bilgiler.soyisim="Dırmıkcı";
+        var yazdir="Bilgilerin: "+bilgiler.isim+" "+bilgiler.soyisim;
+        document.write(yazdir+"<br/>");
+        bilgiler.soyisim="Kartal";
+        var yazdir="Bilgilerin: "+bilgiler.isim+" "+bilgiler.soyisim;
+        document.write(yazdir+"<br/>");
+
+
+
+
+        var bilgiler4={
+            isim:"Ebrar",
+            soyIsim:"Taşcı",
+            uyari:function(){
+                alert("Ben nesne içi fonk koduyum");
+                this.meslek="Mimar";
+                this.yas=30;
+            }
+        };
+        var isimyaz=bilgiler4.isim;
+        var soyIsimyaz=bilgiler4.soyIsim;
+        document.write(" "+isimyaz+" "+soyIsimyaz+"<br/>");
+        bilgiler4.uyari();
+        var meslekyaz=bilgiler4.meslek;
+        var yasyaz=bilgiler4.yas;
+        document.write(" "+meslekyaz+" "+yasyaz+"<br/>");
+
+
+       var bilgiler5={
+          detay:function()
+          {
+            var isim="Derya";
+            var soyIsim="Akçay";
+            var islem=isim+" "+soyIsim;
+            return islem;
+          }
+       };
+      document.write(bilgiler5.detay()+"<br/>");
+      var yeniBilgiyaz=bilgiler5.yeniBilgiEkle="Halamın kızı";
+      document.write(yeniBilgiyaz+"<br/>");
+      bilgiler5.yenifonk=function(isim,soyIsim) {
+         var metin=isim+" "+soyIsim;
+         return metin;
+      }
+      document.write(bilgiler5.yenifonk("İrem","Dırmıkcı")+"<br/>");
+
+
+
+      /*FONKSİYON ŞEKLİNDE NESNELER*/
+     var ornek= function(isim,soyIsim)
+     {
+        this.isim=isim;
+        this.soyIsim=soyIsim;
+     }        
+     var sonuc=new ornek("İrem","Kartal");
+     var metin=sonuc.isim+ " " +sonuc.soyIsim;
+     document.write(metin+"<br/>");
+
+     /*for i in yapısı ve nesne*/
+     var yeniNesne={
+        isim:"İrem",
+        soyIsim:"Kartal",
+        yas:15,
+        departman:"Bilgisayar Mühendisliği"
+     };
+     
+     for (var sonuc in yeniNesne){
+        document.write(yeniNesne[sonuc]+"<br/>");
+     }
+     
+     /* nesnelerde delete metodu*/
+     delete yeniNesne.isim;
+     for (var sonuc in yeniNesne){
+        document.write(yeniNesne[sonuc]+"<br/>");
+     }
+     /*fonksiyondan nesne üretirsek fonk içindeki değişkenler this ile tanımlanır. Prototype ile bu fonksiyonun her şeyine ulaşılabilinir.*/
+      
+      function bilgi()
+      {
+          this.isim="Leyla";
+          this.soyIsim="Çiçek";
+          this.yas=45;
+          this.meslek="Öğretmen";
+      }
+       var sonuc=new bilgi();
+       bilgi.prototype.islem=function()
+       {
+        return  this.isim+" "+ this.soyIsim+" "+this.yas+" "+this.meslek;
+       }
+      
+       /*__proto__=prototype inesnesi içindeki özelliklere ulaşmak için kullanılır.*/
+      
+       bilgi.prototype.islem1=function()
+       {
+        return this.ifade="Merhaba";
+       }
+       sonuc.__proto__.islem1();
+       var yazdir=sonuc.islem();
+       var yazdir1=sonuc.islem1();
+       document.write(yazdir+" "+yazdir1+"<br/>");
+
+       /*isPrototypeOf=Parametrik olarak girilen nesne prototype zincirinde constructer bulunup bulunmadığını kontrol eder.*/
+      var kontrolet=bilgi.prototype.isPrototypeOf(sonuc);
+      document.write(kontrolet+"<br/>");
+       /*instanceof=Parametrik olarak girilen nesne prototype zincirinde constructerın doğruluğunu kontrol eder.*/
+      var kontrolet1=sonuc instanceof bilgi;
+      document.write(kontrolet1+"<br/>");
+
+
+
+
+
+       var bil={
+        isim:"İrem",
+        soyIsim:"Kartal",
+        yas:15,
+        departman:"Bilgisayar Mühendisliği"
+       };
+       /*hasOwnProperty=Bir nesnenin parametrik olarak kullanıp kullanılmadığını söyler boolen bir değer döndürür.*/
+       var isimKontrol=bil.hasOwnProperty("isim");
+       document.write(isimKontrol+"<br/>");
+       /*propertyIsEnumerable=Bir nesnenin parametrik olarak kullanıp kullanılmadığını söyler boolen bir değer döndürür.*/
+        var isimKontrol1=bil.propertyIsEnumerable("isim");
+        document.write(isimKontrol1);
+
+      /* var deger={
+            isim:"İrem"
+       };
+       deger.watch("isim",function(ozellikadi,eskideger,yenideger)
+       {
+            var metin=ozellikadi+"\n"+eskideger+"\n "+yenideger;
+            alert(metin);
+       });
+       deger.isim="Yusuf"; */
+       /*toLocalString*/
+       var para=1500;
+       var demo=para.toLocaleString("tr-TR",{style:"currency",currency:"TRY"});
+       document.write(demo)
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     sycnc
+    //     console.log(1)
+    //     console.log(2)
+    //     console.log(3)
+    //    async
+    //  console.log(1);
+    //  setTimeout(()=>{
+    //     console.log(2)
+    //  },2000);
+    //  console.log(3);
+     
+    // callback functions
+        console.log("start");
+        const login=(username,password,callback)=>{
+            setTimeout(()=>{
+                callback({username:username,email:"iremkartal@gmail.com"})
+                
+            },2000)
+        }
+        const getPostsByUsername=(username,callback)=>{
+            setTimeout(()=>{
+                callback(["post1","post2","post3"]);
+            },1000)
+        }
+
+        const getPostDetails=(post,callback)=>{
+            setTimeout(()=>{
+                callback("post details");
+            },1000)
+        }
+        login("İrem Kartal","1234",user=>{
+            console.log(user.username);
+            getPostsByUsername(user.username,(posts)=>{
+                console.log(posts);
+           
+                    getPostDetails(posts[0],(details)=>{
+                    console.log(details);
+            })
+        });
+        });
+        console.log("end");
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
